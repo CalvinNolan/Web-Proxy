@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    var ws = new WebSocket('ws://localhost:8000');
+
+    ws.onmessage = function(data) {
+      var ul = document.getElementById("consoleList");
+      var li = document.createElement("li");
+      li.appendChild(document.createTextNode(data.data));
+      ul.appendChild(li);
+      updateScroll();
+    };
+
+    function updateScroll(){
+        var element = document.getElementById("consoleList");
+        element.scrollTop = element.scrollHeight;
+    }
+
+    </script>
+    <style>
+    #sudoConsole {
+      height: 300px;
+      background-color: #000;
+      margin-bottom: 10px;
+    }
+
+    #consoleList {
+      max-height: 300px;
+      overflow: scroll;
+    }
+
+    #consoleList li {
+      color: #FFF;
+      list-style: none;
+      margin-bottom: 5px;
+      margin-left: -30px;
+    }
+
+    #blacklist fieldset {
+      border: none;
+    }
+
+    #unblacklist fieldset {
+      border: none;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="sudoConsole">
+      <ul id="consoleList">
+      </ul>
+    </div>
+    <form id="blacklist" action="" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <label for="name">Website:</label>
+        <input type="text" id="website" name="blacklistwebsite" placeholder="Enter website name" />
+        <input type="submit" value="Blacklist Website" />
+      </fieldset>
+    </form>
+    <form id="unblacklist" action="" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <label for="name">Unblacklist Website:</label>
+        <input type="text" id="website" name="unblacklistwebsite" placeholder="Enter website to unblacklist" />
+        <input type="submit" value="Unblacklist Website" />
+      </fieldset>
+    </form>
+  </body>
+</html>

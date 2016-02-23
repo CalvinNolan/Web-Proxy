@@ -1,0 +1,20 @@
+{
+  "name": "proxyserver",
+  "version": "1.0.0",
+  "description": "A web proxy that provides a management console that updates in real time",
+  "main": "ProxyServer.js",
+  "dependencies": {
+    "formidable": "^1.0.17",
+    "mysql": "^2.10.2",
+    "validator": "^4.9.0",
+    "ws": "^1.0.1",
+    "tunnel": "^0.0.4",
+    "socket.io": "^1.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Calvin Nolan",
+  "license": "ISC"
+}
