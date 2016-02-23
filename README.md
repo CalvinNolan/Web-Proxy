@@ -20,6 +20,6 @@ You can view the management console on localhost:3000 which will update every re
 <br>
 <img src="images/Screen2.png"></img>
 An view of the management console.
-<br>
+<br><br>
 <img src="images/Screen3.png"></img>
 A website being served from cache.
